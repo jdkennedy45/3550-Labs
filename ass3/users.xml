@@ -1,0 +1,12 @@
+<users>
+ <user>
+  <username>jdodson</username>
+  <password>hello</password>
+  <fullname>Jim Dodson</fullname>
+ </user>
+ <user>
+  <username>jblow</username>
+  <password>world</password>
+  <fullname>Joe Blow</fullname>
+ </user>
+</users>
