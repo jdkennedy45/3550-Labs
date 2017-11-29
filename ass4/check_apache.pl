@@ -9,8 +9,11 @@ use LWP::UserAgent; #cpan LWP::UserAgent
 print "Looking for apache... ";
 
 #Initital set-up not mentioned on Moodle:
-#  sudo apt-get install openssh-server THEN
-#  /etc/init.d/sshd restart 
+
+#  1. Turn networking to bridged adapter in Networking
+#  2. sudo gedit /etc/ssh/sshd_config and change it to PermitRootLogin yes
+#  3. sudo apt-get install openssh-server THEN
+#  4. /etc/init.d/sshd restart 
 
 # PROGRAM ONLY WORKS LOGGING IN AS ROOT! Username: root, Password: coursework
 my $chan;
