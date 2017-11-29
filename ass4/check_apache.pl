@@ -54,19 +54,19 @@ $chan = $ssh2->channel();
 $chan->exec("ps -ef");
 print "\nChecking if apache is running... ";
 while (<$chan>){
-		if ($_ =~ /apache2/){
+		if ($_ =~ /apache2/){  #it found apache2 in the running programs list
 			print "Yes.";
-			$counter2++;
+			$counter2++;   #increase counter if it was found. used below
 			last;
 		}	
 }
 $chan->close();
-if ($counter2 eq 0)
+if ($counter2 eq 0)  #aka, it wasn't found in the running program list
 {
 	$chan = $ssh2->channel();
 	print "No.";
-	print "\nStarting Apache... ";
-	$chan->exec("/usr/sbin/apachectl start");
+	print "\nStarting Apache... ";             
+	$chan->exec("/usr/sbin/apachectl start");    #method to start apache
 	print "Done."
 }
 $chan->close();
